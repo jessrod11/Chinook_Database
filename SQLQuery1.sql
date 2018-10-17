@@ -30,11 +30,19 @@ FROM Customer c
 left join Invoice I on c.CustomerId = I.CustomerId
 WHERE Country = 'Brazil'*/
 
---4.) sales_agents.sql: Provide a query showing only the Employees who are Sales Agents.
+/*-4.) sales_agents.sql: Provide a query showing only the Employees who are Sales Agents.
 
 SELECT *
 FROM Employee
-WHERE Title LIKE '%Agent%'
+WHERE Title LIKE '%Agent%'*/
+
+/*5. unique_invoice_countries.sql: Provide a query showing a unique/distinct list of billing countries 
+from the Invoice table.*/
+
+SELECT DISTINCT BillingCountry
+FROM INVOICE
+
+
 	
  
 
