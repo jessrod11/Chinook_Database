@@ -36,11 +36,29 @@ SELECT *
 FROM Employee
 WHERE Title LIKE '%Agent%'*/
 
-/*5. unique_invoice_countries.sql: Provide a query showing a unique/distinct list of billing countries 
-from the Invoice table.*/
+/*5.) unique_invoice_countries.sql: Provide a query showing a unique/distinct list of billing countries 
+from the Invoice table.
 
 SELECT DISTINCT BillingCountry
-FROM INVOICE
+FROM INVOICE*/
+
+/*6.) sales_agent_invoices.sql: Provide a query that shows the invoices associated with each sales agent. 
+The resultant table should include the Sales Agent's full name.*/
+
+/*SELECT  c.SupportRepId 
+FROM Customer c
+join Employee e on c.SupportRepId = e.EmployeeId*/
+
+SELECT 
+SaleAgentsFullName = e.FirstName + ' ' + e.LastName,
+EmployeeTitle = e.Title,
+	i.*
+FROM Employee e 
+join Customer c on c.SupportRepId = e.EmployeeId
+join Invoice i on i.CustomerId = c.CustomerId
+
+
+
 
 
 	
