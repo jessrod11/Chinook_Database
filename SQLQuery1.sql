@@ -14,9 +14,22 @@ SELECT
 FROM Customer
 WHERE Country != 'USA'*/
 
---2.) brazil_customers.sql: Provide a query only showing the Customers from Brazil.
+/*2.) brazil_customers.sql: Provide a query only showing the Customers from Brazil.
 
 SELECT *
 FROM Customer
-Where Country = 'Brazil'
+Where Country = 'Brazil'*/
+
+/*3.)brazil_customers_invoices.sql: Provide a query showing the Invoices of customers who are from Brazil. 
+The resultant table should show the customer's full name, Invoice ID, Date of the invoice and billing country.*/
+
+SELECT 
+FullName = c.FirstName + ' ' + c.LastName, 
+i.InvoiceId, I.InvoiceDate, I.BillingCountry
+FROM Customer c
+left join Invoice I on c.CustomerId = I.CustomerId
+WHERE Country = 'Brazil'
+	
+ 
+
 
