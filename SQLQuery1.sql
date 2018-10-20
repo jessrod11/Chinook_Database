@@ -115,9 +115,6 @@ included on the resulant table.*/
 
 /*17: invoices_line_item_count.sql: Provide a query that shows all Invoices but includes the # of invoice line items.*/
 
-SELECT 
-	l.*
-FROM InvoiceLine l
 
 
 
